@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="540" prefWidth="720" styleClass="root-pane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.java.auctionsystem.ServerController">
+
+
+    <top>
+        <VBox styleClass="header-bar">
+            <HBox alignment="CENTER_LEFT" prefHeight="62" spacing="14">
+                <padding><Insets bottom="0" left="22" right="22" top="0" /></padding>
+
+                <Label style="-fx-font-size:26px;" text="🖥️" />
+                <Label styleClass="header-title" text="Client ChatServer" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Label fx:id="clientCountLabel" styleClass="header-username" text="👥  Connected Clients:  0" />
+            </HBox>
+            <Separator styleClass="divider" />
+        </VBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="8">
+            <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label style="-fx-font-size:15px;" />
+                <Label styleClass="sidebar-title" text="Live Server Log" />
+            </HBox>
+
+            <TextArea fx:id="logArea" editable="false" styleClass="log-area" wrapText="true" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </center>
+
+
+    <bottom>
+        <VBox>
+            <Separator styleClass="divider" />
+            <HBox alignment="CENTER_LEFT" prefHeight="38" spacing="10" styleClass="status-bar">
+                <padding><Insets bottom="0" left="18" right="18" top="0" /></padding>
+                <Label fx:id="statusLabel" styleClass="status-label" text="⏳  Starting server…" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
